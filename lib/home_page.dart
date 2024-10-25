@@ -61,22 +61,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Notes", 
-          style: TextStyle(
-            fontFamily: "Nothing", 
-            fontWeight: FontWeight.w500, 
-            fontSize: 40),
-            ),
+            title: const Text(
+              "Notes", 
+              style: TextStyle(
+                fontFamily: "Nothing", 
+                fontWeight: FontWeight.w500, 
+                fontSize: 40),
+                ),
             actions: [
 
               // logout button
-              IconButton(onPressed: logout, icon: SvgPicture.asset(
-                          'lib/icons/logout_icon.svg',
-                          width: 40,
-                          height: 40,
-                          color: Colors.white,
-                          )),
+              IconButton(
+                onPressed: logout, 
+                icon: Icon(
+                  Icons.logout_rounded, 
+                  color: Colors.white, 
+                  size: 40,
+                  ),
+                 ),
 
             ],
            ),
@@ -144,7 +146,7 @@ class _HomePageState extends State<HomePage> {
               return const Text("No notes...");
             }
           }
-        )
+        ),
     );
   }
 }
