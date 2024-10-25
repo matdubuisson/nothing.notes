@@ -35,6 +35,13 @@ The next big update will be the November update it comes out on the 11/1/2024 an
 The Latest Update was on the 10/17/2024 and it includes some bugfixes and new svg icons.
 https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
 
+## Other stuff
+#### [Feedback](https://tinted-seaplane-cb4.notion.site/12a93fc8858b8026820dd172dffdb309?pvs=105)
+#### [Support me](buymeacoffee.com/nepogfx)
+#### [Bug report](https://tinted-seaplane-cb4.notion.site/12a93fc8858b80f390eadfc3905f79de?pvs=105)
+####
+
+
 
 ## Getting Started
 #### 1. Clone the repository
