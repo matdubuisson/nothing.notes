@@ -4,7 +4,9 @@ import 'package:nothing_note/home_page.dart';
 import 'package:nothing_note/tasks_page.dart';
 
 class MyNavbar extends StatefulWidget {
-  const MyNavbar({super.key});
+  const MyNavbar({
+    super.key,
+    });
 
   @override
   State<MyNavbar> createState() => _MyNavbarState();
@@ -21,7 +23,7 @@ class _MyNavbarState extends State<MyNavbar> {
 
   final List <Widget> _pages = [
     const HomePage(),
-    const TasksPage(),
+    TasksPage(),
   ];
   
   @override

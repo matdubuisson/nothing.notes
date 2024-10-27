@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   final userId = FirebaseAuth.instance.currentUser?.uid;
 
   // logout user
+
   void logout() {
     FirebaseAuth.instance.signOut();
   }
