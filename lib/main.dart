@@ -2,13 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nothing_note/irno/firebase_options.dart';
 import 'package:nothing_note/services/auth.dart';
+import 'package:nothing_note/services/task_provider.dart';
 import 'package:nothing_note/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,11 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AuthPage(),
-      theme: lightMode,
-      darkTheme: darkMode,
+    return ChangeNotifierProvider(
+      create: (context) => TaskProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: AuthPage(),
+        theme: lightMode,
+        darkTheme: darkMode,
+      ),
     );
   }
 }
