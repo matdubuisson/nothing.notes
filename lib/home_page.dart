@@ -73,9 +73,14 @@ class _HomePageState extends State<HomePage> {
 
               // logout button
               IconButton(
-                onPressed: logout, 
+                onPressed: () {
+                  showSearch(
+                    context: context, 
+                    delegate: CustomSearchDelegate(),
+                    );
+                }, 
                 icon: Icon(
-                  Icons.logout_rounded, 
+                  Icons.search_rounded, 
                   color: Colors.white, 
                   size: 40,
                   ),
@@ -148,6 +153,75 @@ class _HomePageState extends State<HomePage> {
             }
           }
         ),
+    );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  List<String> searchTerms = [];
+  final firestoreService = FirestoreService();
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: firestoreService.getNotesStream(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final userId = FirebaseAuth.instance.currentUser?.uid;
+          searchTerms = snapshot.data!.docs.map((note) => note['note'] as String).toList();
+          return ListView.builder(
+            itemCount: searchTerms.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(searchTerms[index]),
+              );
+            },
+          );
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
+    );
+  }
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = "";
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var item in searchTerms) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
     );
   }
 }
