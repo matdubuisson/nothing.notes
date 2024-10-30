@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nothing_note/services/task_provider.dart';
+import 'package:nothing_note/settings_page.dart';
 import 'package:provider/provider.dart';
 import 'add_task_screen.dart';
 
@@ -13,7 +14,18 @@ class TasksPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tasks'),
+        title: Center(child: Padding(
+          padding: const EdgeInsets.only(right: 60),
+          child: const Text('Tasks', style: TextStyle(fontSize: 40),),
+        )),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsPage(),
+                    ));
+                    }, 
+                icon: Icon(Icons.settings_rounded, size: 32,)
+                ),
       ),
       body: ListView.builder(
         itemCount: taskProvider.tasks.length,

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nothing_note/services/firestore.dart';
+import 'package:nothing_note/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -62,16 +63,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-            title: const Text(
-              "Notes", 
-              style: TextStyle(
-                fontFamily: "Nothing", 
-                fontWeight: FontWeight.w500, 
-                fontSize: 40),
+            title: Center(
+              child: const Text(
+                "Notes", 
+                style: TextStyle(
+                  fontFamily: "Nothing", 
+                  fontWeight: FontWeight.w500, 
+                  fontSize: 40),
+                  ),
+            ),
+                leading: IconButton(
+                  icon: Icon
+                  (Icons.settings_rounded, 
+                  color: Theme.of(context).colorScheme.inversePrimary, 
+                  size: 32),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsPage(),
+                    ));
+                  },
                 ),
+
             actions: [
 
-              // logout button
+              // search button
               IconButton(
                 onPressed: () {
                   showSearch(
@@ -81,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                 }, 
                 icon: Icon(
                   Icons.search_rounded, 
-                  color: Colors.white, 
+                  color: Theme.of(context).colorScheme.inversePrimary, 
                   size: 40,
                   ),
                  ),

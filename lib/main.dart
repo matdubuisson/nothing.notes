@@ -10,7 +10,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (context) => ThemeProvider(),
+    child: const MyApp(),)
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,8 +27,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: AuthPage(),
-        theme: lightMode,
-        darkTheme: darkMode,
+        theme: Provider.of<ThemeProvider>(context).themeData,
       ),
     );
   }
