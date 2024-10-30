@@ -31,7 +31,7 @@ class SettingsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Dark Mode",
+                  "Light Mode",
                   ),
                 Switch(
                   value: Provider.of<ThemeProvider>(context, listen: false).isDarkMode, 
