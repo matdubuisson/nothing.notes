@@ -19,6 +19,8 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 - Search notes
 - Edit notes
 - Google account support
+- Notifications
+- Notes with a body
 
 
 #### November Update (11/1/2024)
