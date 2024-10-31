@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nothing_note/components/helper_functions.dart';
 import 'package:nothing_note/components/my_button.dart';
 import 'package:nothing_note/components/my_textfield.dart';
@@ -45,6 +47,27 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.pop(context);
     displayMessageToUser(e.code, context);
    }
+  }
+
+  // google sign in
+  signInWithGoogle() async {
+    // begin interactive sign in process
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // user cancels google sign in
+    if (googleUser == null) return;
+    
+    // obtain auth details from request
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+    // create a new credential for user
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    // sign in with credential
+    await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   @override
@@ -122,12 +145,13 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 50,),
 
+              // google sign in button
               Container(
                 decoration: BoxDecoration(color: Theme.of(context).colorScheme.tertiary, 
                 borderRadius: BorderRadius.circular(18),
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () => signInWithGoogle(),
                   icon: Image.asset("lib/icons/Google_Logo.png", width: 72,),
                   ),
               ),
