@@ -2,9 +2,9 @@
 
 # Nothing Note App
 
-![Logo](https://framerusercontent.com/images/Ehohady4a6E7FAPwsYaQMXAfQA.png)
+![Logo](https://framerusercontent.com/images/cacToEDl0rR6CdzuXXcqXgm15Go.png)
 
-Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.google.com/file/d/1j6Ctu4PkRXJcPkNm8LO9XTaplK9Ryw5l/view?usp=drive_link)
+Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.google.com/file/d/1GL2OIHjNDkG_zizUbnrQIk8LI2F8Tnv_/view?usp=drive_link)
 
 ## Features✨
 
@@ -12,29 +12,29 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 - Nothing Theme
 - Deleting notes
 - Have your notes synced on all your android devices
+- Search Notes
+- Tasks
 
 ## Coming Soon!!!
 
-- Tasks
-- Search notes
 - Edit notes
 - Google account support
 - Notifications
 - Notes with a body
 
 
-#### November Update (11/1/2024)
+#### 1.1 Update (11/22/2024)
 
-The next big update will be the November update it comes out on the 11/1/2024 and it will include the Tasks and Search notes feature.
+The next update will be on the 11/22/2024. It comes with the Google Account support.
 
 
 ## Latest Update!
 
 
 
-#### Beta 0.3
+#### Full version 1.0
 
-The Latest Update was on the 10/17/2024 and it includes some bugfixes and new svg icons.
+The Latest Update was on the 11/01/2024 and it includes Tasks, Search notes and a new Logo. When you want to know more about it here is the Link:
 https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
 
 
