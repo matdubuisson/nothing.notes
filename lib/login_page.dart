@@ -119,6 +119,18 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
+
+              const SizedBox(height: 50,),
+
+              Container(
+                decoration: BoxDecoration(color: Theme.of(context).colorScheme.tertiary, 
+                borderRadius: BorderRadius.circular(18),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Image.asset("lib/icons/Google_Logo.png", width: 72,),
+                  ),
+              ),
             ],
           ),
         ),
