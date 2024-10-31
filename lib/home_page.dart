@@ -148,12 +148,7 @@ class _HomePageState extends State<HomePage> {
 
                       // delete button
                       IconButton(onPressed: () => firestoreService.deleteNote(docID, userId!), 
-                      icon: SvgPicture.asset(
-                        'lib/icons/delete_icon.svg',
-                        width: 40,
-                        height: 40,
-                        color: Colors.redAccent,
-                        ),
+                      icon: const Icon(Icons.delete_rounded, color: Colors.redAccent,),
                       ),
                     ],
                   ),

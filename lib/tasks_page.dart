@@ -46,7 +46,7 @@ class TasksPage extends StatelessWidget {
               },
             ),
             trailing: IconButton(
-              icon: const Icon(Icons.delete),
+              icon: const Icon(Icons.delete_rounded, color: Colors.redAccent,),
               onPressed: () {
                 taskProvider.deleteTask(task);
               },

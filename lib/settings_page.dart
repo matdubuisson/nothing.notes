@@ -54,6 +54,46 @@ class SettingsPage extends StatelessWidget {
                 color: Colors.redAccent,),
               ),
             ),
+            
+            TextButton(onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text('Delete your Account?'),
+                    content: const Text(
+              '''If you select Delete we will delete your account on our server.
+
+              Your app data will also be deleted and you won't be able to retrieve it.
+
+              Since this is a security-sensitive operation, you eventually are asked to login before your account can be deleted.'''),
+                    actions: [
+                      TextButton(
+                        child: const Text('Cancel'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        child: const Text(
+                          'Delete',
+                          style: TextStyle(color: Colors.redAccent),),
+                        onPressed: () {
+                          Future<void> deleteUserAccount() async {
+                              try {
+                              await FirebaseAuth.instance.currentUser!.delete();
+                              } catch (e) {
+                              print(e);
+                              }
+                            }
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+             }, 
+              child: Text("Delete Account", style: TextStyle(color: Colors.redAccent),),)
         ],
       ),
     );
