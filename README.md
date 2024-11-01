@@ -35,7 +35,7 @@ The next update will be on the 11/22/2024. It comes with the Google Account supp
 #### Full version 1.0
 
 The Latest Update was on the 11/01/2024 and it includes Tasks, Search notes and a new Logo. When you want to know more about it here is the Link:
-https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
+https://github.com/ThriveEngineer/nothing.notes/releases/tag/v1.0
 
 
 
