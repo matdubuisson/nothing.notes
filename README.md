@@ -61,5 +61,5 @@ flutter run
 ## Other stuff
 ### [Roadmap🛣️](https://tinted-seaplane-cb4.notion.site/Nothing-Notes-App-12a93fc8858b808c90ead4f1f87aeeca?pvs=4)
 ### [Feedback🤚](https://tinted-seaplane-cb4.notion.site/12a93fc8858b8026820dd172dffdb309?pvs=105)
-### [Support me💖](buymeacoffee.com/nepogfx)
+### [Support me💖](https://buymeacoffee.com/nepogfx)
 ### [Bug report🐞](https://tinted-seaplane-cb4.notion.site/12a93fc8858b80f390eadfc3905f79de?pvs=105)
