@@ -1,17 +1,36 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:nothing_note/components/login_or_register.dart';
+import 'package:nothing_note/login_page.dart';
 import 'package:nothing_note/services/auth.dart';
 import 'package:nothing_note/theme.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class SettingsPage extends StatelessWidget {
+final Uri _url = Uri.parse('https://tinted-seaplane-cb4.notion.site/12f93fc8858b80988e44c2bb258063f0?pvs=105');
+
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
-  // logout user
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
 
-  void logout() {
-    FirebaseAuth.instance.signOut();
+class _SettingsPageState extends State<SettingsPage> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  // logout user
+  signOut() async {
+    await auth.signOut();
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => AuthPage()));
   }
+
+  // launch url
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -49,57 +68,26 @@ class SettingsPage extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              logout();
-              Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const AuthPage(),
-                    ));
-              }, 
+              signOut();
+            }, 
             child: Text(
               "Log out", 
               style: TextStyle(
                 color: Colors.redAccent,),
               ),
             ),
-            
-            TextButton(onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: const Text('Delete your Account?'),
-                    content: const Text(
-              '''If you select Delete we will delete your account on our server.
 
-              Your app data will also be deleted and you won't be able to retrieve it.
-
-              Since this is a security-sensitive operation, you eventually are asked to login before your account can be deleted.'''),
-                    actions: [
-                      TextButton(
-                        child: const Text('Cancel'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                      TextButton(
-                        child: const Text(
-                          'Delete',
-                          style: TextStyle(color: Colors.redAccent),),
-                        onPressed: () {
-                          Future<void> deleteUserAccount() async {
-                              try {
-                              await FirebaseAuth.instance.currentUser!.delete();
-                              } catch (e) {
-                              print(e);
-                              }
-                            }
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
-             }, 
-              child: Text("Delete Account", style: TextStyle(color: Colors.redAccent),),)
+            GestureDetector(
+              onTap: () {
+                _launchUrl();
+              },
+                child: Text(
+                  'Delete Account',
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                  ),
+                ),
+            ),
         ],
       ),
     );
