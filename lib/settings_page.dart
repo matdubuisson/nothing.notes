@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:nothing_note/services/auth.dart';
 import 'package:nothing_note/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -47,7 +48,12 @@ class SettingsPage extends StatelessWidget {
             endIndent: 45,
           ),
           TextButton(
-            onPressed: logout, 
+            onPressed: () {
+              logout();
+              Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AuthPage(),
+                    ));
+              }, 
             child: Text(
               "Log out", 
               style: TextStyle(
