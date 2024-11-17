@@ -42,7 +42,7 @@ https://github.com/ThriveEngineer/nothing.notes/releases/tag/v1.0
 ## Getting Started
 #### 1. Clone the repository
 
-git clone https://github.com/AzhamProdLive/Notes_App_Nothing.git
+git clone https://github.com/ThriveEngineer/nothing.notes.git
 
 -----------------------------------------------------------------------
 #### 2. Navigate to the project directory
