@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nothing_note/irno/firebase_options.dart';
 import 'package:nothing_note/services/auth.dart';
+import 'package:nothing_note/services/firebase_api.dart';
 import 'package:nothing_note/services/task_provider.dart';
 import 'package:nothing_note/theme.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,7 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseApi().initNotifications();
 
   runApp(
     ChangeNotifierProvider(create: (context) => ThemeProvider(),

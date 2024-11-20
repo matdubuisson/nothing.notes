@@ -144,20 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-            
-                const SizedBox(height: 50,),
-            
-                // google sign in button
-                Container(
-                  decoration: BoxDecoration(color: Theme.of(context).colorScheme.tertiary, 
-                  borderRadius: BorderRadius.circular(18),
-                  ),
-                  child: IconButton(
-                    onPressed: () => signInWithGoogle(),
-                    icon: Image.asset("lib/icons/Google_Logo.png", width: 72,),
-                    ),
-                ),
-              ],
+              ]
             ),
             ]
           ),
