@@ -23,11 +23,6 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 - Notes with a body
 
 
-#### 1.1 Update (11/22/2024)
-
-The next update will be on the 11/22/2024. It comes with the Google Account support.
-
-
 ## Latest Update!
 
 
