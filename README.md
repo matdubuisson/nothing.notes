@@ -19,7 +19,7 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://github.c
 ## Coming Soon!!!
 
 - Edit notes
-- Google account support
+- Widgets
 - Notes with a body
 
 
