@@ -14,12 +14,12 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 - Have your notes synced on all your android devices
 - Search Notes
 - Tasks
+- Notifications
 
 ## Coming Soon!!!
 
 - Edit notes
 - Google account support
-- Notifications
 - Notes with a body
 
 
@@ -27,10 +27,10 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 
 
 
-#### Full version 1.0
+#### Full version 1.1
 
-The Latest Update was on the 11/01/2024 and it includes Tasks, Search notes and a new Logo. When you want to know more about it here is the Link:
-https://github.com/ThriveEngineer/nothing.notes/releases/tag/v1.0
+The Latest Update was on the 12/06/2024 and it includes Notifications. When you want to know more about it here is the Link:
+https://github.com/ThriveEngineer/nothing.notes/releases/tag/v1.1
 
 
 
