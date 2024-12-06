@@ -4,7 +4,7 @@
 
 ![Logo](https://framerusercontent.com/images/cacToEDl0rR6CdzuXXcqXgm15Go.png)
 
-Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.google.com/file/d/1GL2OIHjNDkG_zizUbnrQIk8LI2F8Tnv_/view?usp=drive_link)
+Nothing Notes is a Nothing themed notes app. Download the [APK](https://github.com/ThriveEngineer/nothing.notes/releases/download/v1.1/app-release.apk)
 
 ## Features✨
 
