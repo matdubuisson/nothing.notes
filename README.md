@@ -1,6 +1,6 @@
 
 
-# Nothing Note App
+# Nothing Note App (**This app is not being supported anymore**)
 
 ![Logo](https://framerusercontent.com/images/cacToEDl0rR6CdzuXXcqXgm15Go.png)
 
